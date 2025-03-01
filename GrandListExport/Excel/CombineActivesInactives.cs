@@ -75,13 +75,14 @@ namespace GrandListExport
         {
             try
             {
+                ExcelClass.NemrcExportsFolder = ExcelClass.NemrcExportsFolder.Replace("Z:", "C:");
                 string sGrandListYear = (grandListYear == 0) ? "" : grandListYear.ToString();
-                worksheetValues1 = SelectInputFile(ExcelClass.NemrcExportsFolder, "NemrcActives", "csv", ColumnName.Span, workingGrandList, grandListYear);
+                worksheetValues1 = SelectInputFile(ExcelClass.NemrcExportsFolder, "NemrcActives", "xls", ColumnName.Span, workingGrandList, grandListYear);
                 if (worksheetValues1 == null)
                 {
                     return;
                 }
-                worksheetValues2 = SelectInputFile(ExcelClass.NemrcExportsFolder, "NemrcInactives", "csv", ColumnName.Span, workingGrandList, grandListYear);
+                worksheetValues2 = SelectInputFile(ExcelClass.NemrcExportsFolder, "NemrcInactives", "xls", ColumnName.Span, workingGrandList, grandListYear);
                 if (worksheetValues2 == null)
                 {
                     return;
@@ -191,12 +192,12 @@ namespace GrandListExport
                         }
                         IncrementProgressBar();
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
             }
             return numRows;
