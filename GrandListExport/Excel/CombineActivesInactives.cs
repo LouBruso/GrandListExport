@@ -191,12 +191,12 @@ namespace GrandListExport
                         }
                         IncrementProgressBar();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
             return numRows;
