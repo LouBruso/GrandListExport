@@ -122,8 +122,8 @@ namespace GrandListExport
                 progressBar.Value = 0;
                 progressBar.Step = 1;
                 progressBar.Maximum = worksheetValues.numRows;
-                var rowIndex = 0;
-                for (int i = 1; i <= worksheetValues.numRows; i++)
+                var rowIndex = 1;
+                for (int i = 1; i < worksheetValues.numRows; i++)
                 {
                     rowIndex++;
                     MoveNemrcFields(worksheetValues.inputWorksheet, rowIndex);

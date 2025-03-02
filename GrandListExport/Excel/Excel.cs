@@ -85,9 +85,6 @@ namespace GrandListExport
         public static Microsoft.Office.Interop.Excel.Application xlApp;
         ExcelPackage ExcelPackageOutput;
         ExcelPackage ExcelPackageOutput2;
-        //public static string NemrcExportsFolder = @"D:\Exports";
-        //public static string PatriotExportsFolder = @"D:\PatriotExports";
-        //public static string ReportsFolder = @"D:\Reports";
         public static string NemrcExportsFolder = @"Z:\NEMRC\Exports";
         public static string PatriotExportsFolder = @"X:\ListersInformation\PatriotExports";
         public static string ReportsFolder = @"X:\ListersInformation\Reports";

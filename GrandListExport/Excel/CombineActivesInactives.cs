@@ -138,7 +138,7 @@ namespace GrandListExport
                 progressBar.Value = 0;
                 progressBar.Step = 10;
                 progressBar.Maximum = worksheetValues.numRows;
-                for (int rowIndex = 1; rowIndex <= worksheetValues.numRows; rowIndex++)
+                for (int rowIndex = 2; rowIndex <= worksheetValues.numRows; rowIndex++)
                 {
                     try
                     {
@@ -177,27 +177,27 @@ namespace GrandListExport
                             columnNum++;
                             if (nemrcColumn.columnName == "Contiguous")
                             {
-                                outputWorksheet.Cells[cumulativeRowIndex + rowIndex + 1, columnNum].Value = contiguousTaxMapId;
+                                outputWorksheet.Cells[cumulativeRowIndex + rowIndex, columnNum].Value = contiguousTaxMapId;
                             }
                             else
                             {
                                 string value = GetCellValue(inputWorksheet, rowIndex, nemrcColumn.columnNum);
-                                outputWorksheet.Cells[cumulativeRowIndex + rowIndex + 1, columnNum].Value = value;
+                                outputWorksheet.Cells[cumulativeRowIndex + rowIndex, columnNum].Value = value;
                                 if (columnNum == 1)
                                 {
                                     columnNum++;
-                                    outputWorksheet.Cells[cumulativeRowIndex + rowIndex + 1, columnNum].Value = activeInactive;
+                                    outputWorksheet.Cells[cumulativeRowIndex + rowIndex, columnNum].Value = activeInactive;
                                 }
                             }
                         }
                         IncrementProgressBar();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
             return numRows;

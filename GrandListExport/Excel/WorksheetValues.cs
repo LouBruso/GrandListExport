@@ -159,14 +159,14 @@ namespace GrandListExport
             numRows = usedRange.Rows.Count;
             numCols = usedRange.Columns.Count;
             int startRow;
-            if (inputFileType == InputFileType.Nemrc)
-            {
-                startRow = 1;
-            }
-            else
-            {
+            //if (inputFileType == InputFileType.Nemrc)
+            //{
+            //    startRow = 1;
+            //}
+            //else
+            //{
                 startRow = 2;
-            }
+            //}
             return excepWorksheet.Range[excepWorksheet.Cells[startRow, 1], excepWorksheet.Cells[numRows, numCols]];
         }
         //****************************************************************************************************************************
